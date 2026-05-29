@@ -111,9 +111,10 @@ def main():
     num_mixed_matrices = 6000
     num_convex_combinations = 4000
     num_general_states = 6000
+    nq=4
 
-    num_states_for_mixed = 16
-    dim = 16
+    num_states_for_mixed = 2**nq
+    dim = 2**nq
 
     mixed_rho_list  = generate_mixed_states(num_mixed_matrices, num_states_for_mixed, dim)
     pure_rho_list   = [np.outer(psi := generate_random_pure_state(dim), psi.conj()) for _ in range(num_pure_matrices)]
